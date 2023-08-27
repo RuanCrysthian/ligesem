@@ -26,13 +26,12 @@ public class LigesemSemantico extends LigesemBaseVisitor<Void> {
     @Override
     public Void visitInfo(LigesemParser.InfoContext ctx) {
         if (ctx.TEXTO().size() < 2) {
-            LigesemType.adicionarErroSemantico(ctx.stop, " numero de atribuicoes insuficientes para informacoes de disciplina proximo a: "+ctx.stop.getText());
+            LigesemType.adicionarErroSemantico(ctx.stop, " numero de atribuicoes insuficientes para informacoes de pessoais proximo a: "+ctx.stop.getText());
         }
         return null;
     }
 
     public Void visitBloco_disciplina(LigesemParser.Bloco_disciplinaContext ctx) {
-
         if (ctx.disciplina() != null) {
             for (var t : ctx.disciplina()) {
                 if (t.NOME_DISCIPLINAS() == null) {
