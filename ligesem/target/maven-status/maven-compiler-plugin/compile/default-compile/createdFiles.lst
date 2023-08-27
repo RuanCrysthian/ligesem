@@ -1,0 +1,16 @@
+br/ufscar/dc/compiladores/ligesem/LigesemSemantico.class
+br/ufscar/dc/compiladores/ligesem/LigesemVisitor.class
+br/ufscar/dc/compiladores/ligesem/LigesemBaseVisitor.class
+br/ufscar/dc/compiladores/ligesem/App.class
+br/ufscar/dc/compiladores/ligesem/LigesemParser.class
+br/ufscar/dc/compiladores/ligesem/LigesemListener.class
+br/ufscar/dc/compiladores/ligesem/LigesemType.class
+br/ufscar/dc/compiladores/ligesem/LigesemParser$Bloco_disciplinaContext.class
+br/ufscar/dc/compiladores/ligesem/LigesemBaseListener.class
+br/ufscar/dc/compiladores/ligesem/ErrorHandler.class
+br/ufscar/dc/compiladores/ligesem/LigesemGenerator.class
+br/ufscar/dc/compiladores/ligesem/LigesemLexer.class
+br/ufscar/dc/compiladores/ligesem/LigesemParser$BodyContext.class
+br/ufscar/dc/compiladores/ligesem/LigesemParser$DisciplinaContext.class
+br/ufscar/dc/compiladores/ligesem/LigesemParser$InfoContext.class
+br/ufscar/dc/compiladores/ligesem/LigesemParser$ProgramContext.class
