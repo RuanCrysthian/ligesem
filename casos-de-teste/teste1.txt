@@ -1,0 +1,24 @@
+nome: "Ruan"
+universidade: "UFSCar"
+perfil: 7
+data: 27/08/2023
+
+DISCIPLINA
+DEVOPS, "Auri", 6, "Optativa de linha";
+END_DISCIPLINA
+
+DISCIPLINA
+CONSTRUCAO DE COMPILADORES, "Lucredio", 6, "Obrigatória";
+END_DISCIPLINA
+
+DISCIPLINA
+APRENDIZADO DE MAQUINA 1, "Murilo Naldi", 6, "Optativa de Linha";
+END_DISCIPLINA
+
+DISCIPLINA
+METODOLOGIA CIENTIFICA, "Heloisa", 6, "Obrigatória";
+END_DISCIPLINA
+
+DISCIPLINA
+REDES, "Paulo Matias", 6, "Obrigatória";
+END_DISCIPLINA
