@@ -26,7 +26,12 @@ public class LigesemSemantico extends LigesemBaseVisitor<Void> {
     @Override
     public Void visitInfo(LigesemParser.InfoContext ctx) {
         if (ctx.TEXTO().size() < 2) {
-            LigesemType.adicionarErroSemantico(ctx.stop, " numero de atribuicoes insuficientes para informacoes de pessoais proximo a: "+ctx.stop.getText());
+            LigesemType.adicionarErroSemantico(ctx.stop, " numero de atribuicoes insuficientes para informacoes pessoais proximo a: "+ctx.stop.getText());
+        }
+        if (Integer.parseInt((ctx.NUMINT().getText())) <= 0 )
+            LigesemType.adicionarErroSemantico(ctx.stop, " numero do PERFIL nao pode ser negativo ou igual a zero, proximo a: "+ctx.stop.getText());
+        if(ctx.DATA() == null) {
+            LigesemType.adicionarErroSemantico(ctx.stop, " necessario informar a DATA, proximo a: "+ctx.stop.getText());
         }
         return null;
     }
@@ -34,7 +39,7 @@ public class LigesemSemantico extends LigesemBaseVisitor<Void> {
     public Void visitBloco_disciplina(LigesemParser.Bloco_disciplinaContext ctx) {
         if (ctx.disciplina() != null) {
             for (var t : ctx.disciplina()) {
-                if (t.NOME_DISCIPLINAS() == null) {
+                if (t.NOME_DISCIPLINAS() == null || t.TEXTO() == null || Integer.parseInt(t.NUMINT().getText()) < 0) {
                     LigesemType.adicionarErroSemantico(ctx.stop, " disciplina definido de maneira incorreta proximo a: "+ctx.stop.getText());
                 }
             }

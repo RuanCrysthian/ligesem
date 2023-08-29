@@ -29,7 +29,7 @@ public class App {
 
       // generate code
       if (!LigesemType.semanticError.isEmpty()) {
-        pw.println("Fim da compilacao");
+        pw.println("\nFim da compilacao");
       } else {
         LigesemGenerator lac = new LigesemGenerator();
         lac.visitProgram(ast);
