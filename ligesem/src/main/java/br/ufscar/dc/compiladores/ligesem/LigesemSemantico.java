@@ -1,6 +1,11 @@
 package br.ufscar.dc.compiladores.ligesem;
 
 public class LigesemSemantico extends LigesemBaseVisitor<Void> {
+
+    int maximoCreditos = 32;
+    int totalCreditos = 0;
+    int credito = 0;
+
     @Override
     public Void visitProgram(LigesemParser.ProgramContext ctx) {
 
@@ -38,13 +43,15 @@ public class LigesemSemantico extends LigesemBaseVisitor<Void> {
 
     public Void visitBloco_disciplina(LigesemParser.Bloco_disciplinaContext ctx) {
         if (ctx.disciplina() != null) {
-            for (var t : ctx.disciplina()) {
-                if (t.NOME_DISCIPLINAS() == null || t.TEXTO() == null || Integer.parseInt(t.NUMINT().getText()) < 0) {
-                    LigesemType.adicionarErroSemantico(ctx.stop, " disciplina definido de maneira incorreta proximo a: "+ctx.stop.getText());
-                }
+            for (var disciplina : ctx.disciplina()) {
+                String numintText = disciplina.NUMINT().getText();
+                credito = Integer.parseInt(numintText);
             }
         }
-
+        totalCreditos = totalCreditos + credito;
+        if (totalCreditos > maximoCreditos) {
+            LigesemType.adicionarErroSemantico(ctx.stop, " maximo de creditos atingido proximo a: " + ctx.stop.getText());
+        }
         return null;
     }
 }
